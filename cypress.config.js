@@ -5,7 +5,9 @@ import {
 } from "cypress-mochawesome-reporter/lib/index.js";
 
 export default defineConfig({
+  //Config for cypress-mochawesome-reporter plugin
   reporter: "cypress-mochawesome-reporter",
+
   e2e: {
     setupNodeEvents(on, config) {
       on("before:run", async (details) => {

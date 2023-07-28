@@ -1,6 +1,6 @@
 describe("Test Suite ", () => {
   /**
-   * Test Suite
+   * Test case
    */
   it("Access Goolge and check the URL", () => {
     //Reach the page https://www.google.com/
@@ -10,7 +10,7 @@ describe("Test Suite ", () => {
   });
 
   /**
-   * Test Suite
+   * Test case
    */
   it("Access Youtube and check the URL", () => {
     //Reach the page https://www.google.com/
