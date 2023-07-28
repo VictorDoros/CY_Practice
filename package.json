@@ -1,0 +1,14 @@
+{
+  "name": "practice-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "license": "UNLICENSED",
+  "author": "product team",
+  "type": "module",
+  "main": "index.js",
+  "devDependencies": {
+    "cypress": "^12.17.2",
+    "cypress-mochawesome-reporter": "^3.5.1"
+  }
+}
