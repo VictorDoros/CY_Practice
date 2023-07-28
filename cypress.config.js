@@ -21,5 +21,7 @@ export default defineConfig({
     // changed path to test folders
     fixturesFolder: "cypress/productTests/fixtures",
     specPattern: "cypress/productTests/e2e",
+
+    video: false,
   },
 });
