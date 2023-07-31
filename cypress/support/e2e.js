@@ -18,7 +18,9 @@ import './commands'
 import 'cypress-mochawesome-reporter/register';
 import 'cypress-real-events/support'
 import compareSnapshotCommand from 'cypress-image-diff-js/dist/command'
+import registerCypressGrep from '@cypress/grep/src/support'
 compareSnapshotCommand()
+registerCypressGrep()
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

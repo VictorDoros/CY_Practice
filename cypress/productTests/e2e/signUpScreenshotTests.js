@@ -9,7 +9,7 @@ import data from "../testData/contactList_testData.json"
 import locators from "../fixtures/contactList_selectors.json"
 import { faker } from "@faker-js/faker"
 
-describe("Sign up - Screenshot tests ", () => {
+describe("Sign up - Screenshot tests ", { tags: ['@visual']}, () => {
   beforeEach(() => {
     cy.visit(url.loginPage)
   })
@@ -23,7 +23,6 @@ describe("Sign up - Screenshot tests ", () => {
     //Click on [Submit] button
     clickSimpleOnNthElement(locators.signUp.submitButton)
     //Take a screenshot with the displayed error
-    cy.wait(500)
     compareSnapshot(data.screenshotTest.firstSignUpError)
   })
 
@@ -38,7 +37,6 @@ describe("Sign up - Screenshot tests ", () => {
     //Click on [Submit] button
     clickSimpleOnNthElement(locators.signUp.submitButton)
     //Take a screenshot with the displayed error
-    cy.wait(500)
     compareSnapshot(data.screenshotTest.secondSignUpError)
   })
 
@@ -55,7 +53,6 @@ describe("Sign up - Screenshot tests ", () => {
     //Click on [Submit] button
     clickSimpleOnNthElement(locators.signUp.submitButton)
     //Take a screenshot with the displayed error
-    cy.wait(500)
     compareSnapshot(data.screenshotTest.thirdSignUpError)
   })
 
@@ -74,7 +71,6 @@ describe("Sign up - Screenshot tests ", () => {
     //Click on [Submit] button
     clickSimpleOnNthElement(locators.signUp.submitButton)
     //Take a screenshot with the displayed error
-    cy.wait(500)
     compareSnapshot(data.screenshotTest.forthSignUpError)
   })
 
@@ -95,7 +91,7 @@ describe("Sign up - Screenshot tests ", () => {
     //Click on [Submit] button
     clickSimpleOnNthElement(locators.signUp.submitButton)
     //Take a screenshot with the displayed error
-    cy.wait(500)
+
     compareSnapshot(data.screenshotTest.fifthSignUpError)
   })
 

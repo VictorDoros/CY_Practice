@@ -4,7 +4,7 @@ import url from "../urls/urls.json"
 import data from "../testData/contactList_testData.json"
 import locators from "../fixtures/contactList_selectors.json"
 
-describe("Log in page ", () => {
+describe("Log in page ", { tags: ['@functional']}, () => {
   beforeEach(() => {
     cy.visit(url.loginPage)
   })
