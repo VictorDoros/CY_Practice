@@ -1,6 +1,9 @@
 {
     "logIn": {
-        "loginError": "Incorrect username or password"
+        "loginError": "Incorrect username or password",
+        "email": "carolmarks@email.com",
+        "correctPassword": "123456a",
+        "incorrectPassword": "7894561230ascv"
     },
 
     "signUp": {
