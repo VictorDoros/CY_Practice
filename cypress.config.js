@@ -25,5 +25,6 @@ export default defineConfig({
     specPattern: "cypress/productTests/e2e",
 
     video: false,
+    baseUrl: "https://thinking-tester-contact-list.herokuapp.com",
   },
 });

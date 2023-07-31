@@ -1,0 +1,74 @@
+{
+  "positionMouse_positionScroll": {
+    "bottom": "bottom",
+    "bottomLeft": "bottomLeft",
+    "bottomRight": "bottomRight",
+    "bottomCenter": "bottom-center",
+    "topCenter": "top-center",
+    "top": "top",
+    "topLeft": "topLeft",
+    "topRight": "topRight",
+    "right": "right",
+    "left": "left",
+    "center": "center"
+  },
+
+  "stateData": {
+    "beVisible": "be.visible",
+    "notBeVisible": "not.be.visible",
+    "default": "default",
+    "exists": "exist",
+    "notExist": "not.exist",
+    "beChecked": "be.checked",
+    "notChecked": "not.be.checked",
+    "disabled": "be.disabled",
+    "notAllowed": "not-allowed",
+    "notHaveValue": "not.have.value",
+    "on": "on",
+    "off": "off"
+  },
+
+  "boolean": {
+    "true": "true",
+    "false": "false"
+  },
+
+  "colors": {
+    "selected_focused_borderColor": "1px solid rgb(61, 170, 225)",
+    "borderTopColorTab": "2px solid rgb(61, 170, 225)",
+    "validBlueBackgroundAndTextColor": "rgb(61, 170, 225)",
+    "unselected_unfocused_whiteBackgroundColor": "rgb(255, 255, 255)",
+    "disabledBackgroundColor": "rgb(223, 223, 223)",
+    "notSelectedElementBorderColor": "1px solid rgb(198, 198, 198)",
+    "requiredBorder": "1px solid rgb(224, 66, 57)",
+    "required_error_color": "rgb(224, 66, 57)",
+    "dragAndDrop_greenTooltip_backgroundColor": "rgb(238, 247, 227)",
+    "boxShadow": "rgba(61, 170, 225, 0.35) 0px 0px 0px 2px",
+    "redBoxShadow": "rgba(224, 66, 77, 0.35) 0px 0px 0px 2px",
+    "borderSpotlight": "2px solid rgb(105, 184, 224)",
+    "selectedSectionMenu": "rgb(228, 242, 252)",
+    "selectedSectionBoxShadowColor": "rgb(146, 203, 241) 0px 0px 0px 1px inset",
+    "lightcyan": "rgb(224, 255, 255)",
+    "lightgray": "rgb(211, 211, 211)",
+    "transparent": "rgba(0, 0, 0, 0)",
+    "transparent_1px": "1px solid rgba(0, 0, 0, 0)",
+    "noColorTextApplied": "rgb(115, 115, 115)",
+    "blackTextApplied": "rgb(66, 77, 86)",
+    "darkColor": "rgb(0, 0, 0)",
+    "tooltip_infoToast_defaultToast_blueBackgroundColor": "rgb(225, 241, 249)",
+    "tooltip_tag_warningToast_orangeBackgroundColor": "rgb(252, 242, 220)",
+    "tooltip_tag_warningToast_redBackgroundColor": "rgb(249, 231, 230)",
+    "disabledTag_panelNotSelected": "rgb(243, 243, 243)",
+    "warningIcon_warningBorder_color": "rgb(251, 191, 1)",
+    "successIcon_successBorder_color": "rgb(141, 198, 64)",
+    "succesTag_successToast_backgroundColor": "rgb(119, 187, 26)",
+    "backgroundColorPanelOptionSelected": "rgb(223, 237, 250)",
+    "selectedTileRadioBorder": "2px solid rgb(130, 189, 244)",
+    "selectedTileRadioBackground": "rgba(61, 170, 225, 0.15)",
+    "disabledTileRadioBorder": "2px solid rgba(198, 198, 198, 0.75)",
+    "disabledTileRadioTextColor": "rgb(153, 153, 153)",
+    "verticalMenu": {
+      "focusedItem": "rgb(223, 228, 241)"
+    }
+  }
+}
