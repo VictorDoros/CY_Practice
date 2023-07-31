@@ -1,19 +1,19 @@
 {
-    "logIn": {
-        "emailField": "#email",
-        "passwordField": "#password",
-        "submitButton": "#submit",
-        "errorMessage": "#error"
-    },
+  "logIn": {
+    "emailField": "#email",
+    "passwordField": "#password",
+    "submitButton": "#submit",
+    "errorMessage": "#error"
+  },
 
-    "signUp": {
-        "signInButton": "#signup",
-        "cancelButton": "#cancel",
-        "submitButton": "#submit",
-        "errorMessage": "#error",
-        "firstNameField": "#firstName",
-        "lastNameField": "#lastName",
-        "emailField": "#email",
-        "passwordField": "#password"
-    }
+  "signUp": {
+    "signInButton": "#signup",
+    "cancelButton": "#cancel",
+    "submitButton": "#submit",
+    "errorMessage": "#error",
+    "firstNameField": "#firstName",
+    "lastNameField": "#lastName",
+    "emailField": "#email",
+    "passwordField": "#password"
+  }
 }

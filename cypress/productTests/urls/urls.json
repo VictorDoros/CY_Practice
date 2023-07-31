@@ -1,6 +1,6 @@
 {
-    "baseURL": "https://thinking-tester-contact-list.herokuapp.com",
-    "loginPage": "/login",
-    "signInPage": "/addUser",
-    "contactList": "/contactList"
+  "baseURL": "https://thinking-tester-contact-list.herokuapp.com",
+  "loginPage": "/login",
+  "signInPage": "/addUser",
+  "contactList": "/contactList"
 }

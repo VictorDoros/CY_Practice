@@ -9,7 +9,7 @@ import data from "../testData/contactList_testData.json"
 import locators from "../fixtures/contactList_selectors.json"
 import { faker } from "@faker-js/faker"
 
-describe("Sign up - Screenshot tests ", { tags: ['@visual']}, () => {
+describe("Sign up - Screenshot tests ", { tags: ["@visual"] }, () => {
   beforeEach(() => {
     cy.visit(url.loginPage)
   })
