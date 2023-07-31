@@ -109,7 +109,7 @@ describe("Sign up page ", { tags: ['@functional']}, () => {
   /**
    * Basic test for Sign up
    */
-  it("Fill in the 'First name' and 'Last name' fiels and click on [Submit] button", () => {
+  it("Fill in the 'First name' and 'Last name' fields and click on [Submit] button", () => {
     //Click on [Sign up] button
     clickSimpleOnNthElement(locators.signUp.signInButton)
     //Check that no error message displayed
@@ -134,7 +134,7 @@ describe("Sign up page ", { tags: ['@functional']}, () => {
   /**
    * Basic test for Sign up
    */
-  it("Fill in the 'First name', 'Last name' and 'Email' fiels and click on [Submit] button", () => {
+  it("Fill in the 'First name', 'Last name' and 'Email' fields and click on [Submit] button", () => {
     //Click on [Sign up] button
     clickSimpleOnNthElement(locators.signUp.signInButton)
     //Check that no error message displayed
@@ -161,7 +161,7 @@ describe("Sign up page ", { tags: ['@functional']}, () => {
   /**
    * Basic test for Sign up
    */
-  it("Fill in all the fiels with an invalid password and click on [Submit] button", () => {
+  it("Fill in all the fields with an invalid password and click on [Submit] button", () => {
     //Click on [Sign up] button
     clickSimpleOnNthElement(locators.signUp.signInButton)
     //Check that no error message displayed
@@ -192,7 +192,7 @@ describe("Sign up page ", { tags: ['@functional']}, () => {
   /**
    * Basic test for Sign up
    */
-  it("Fill in all the fiels with a valid password and click on [Submit] button", () => {
+  it("Fill in all the fields with a valid password and click on [Submit] button", () => {
     //Click on [Sign up] button
     clickSimpleOnNthElement(locators.signUp.signInButton)
     //Check that no error message displayed
