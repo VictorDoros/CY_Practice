@@ -37,7 +37,7 @@ export const checkElementState = (elementLocator, state) => {
  * @param {string} text Text that should be displayed from the found element
  *
  */
-export const checkElementStateAndHaveText = (elementLocator, state, text) => {
+export const checkElementStateAndHasText = (elementLocator, state, text) => {
   cy.get(elementLocator)
     .should(state)
     .invoke("text")
@@ -55,4 +55,14 @@ export const checkElementStateAndHaveText = (elementLocator, state, text) => {
  */
 export const typeTextSimple = (elementLocator, textValue) => {
   cy.get(elementLocator).type(textValue)
+}
+
+/**
+ * Get a snapshopt and compare it with the initial one
+ *
+ * @param {string} numeOfFile The name of the file
+ *
+ */
+export const compareSnapshot = (numeOfFile) => {
+  cy.compareSnapshot(numeOfFile)
 }

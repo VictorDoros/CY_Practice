@@ -10,7 +10,7 @@ describe("Log in page ", () => {
   })
 
   /**
-   * Check that you reached the 'Log In' page
+   * Basic test for 'Log in'
    */
   it("Check the 'Log In' URL", () => {
     //Check the 'Log in' URL

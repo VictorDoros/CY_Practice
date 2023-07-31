@@ -1,8 +1,9 @@
-import { defineConfig } from "cypress";
+import { defineConfig } from "cypress"
 import {
   beforeRunHook,
   afterRunHook,
-} from "cypress-mochawesome-reporter/lib/index.js";
+} from "cypress-mochawesome-reporter/lib/index.js"
+import getCompareSnapshotsPlugin from "cypress-image-diff-js/dist/plugin.js"
 
 export default defineConfig({
   //Config for cypress-mochawesome-reporter plugin
@@ -11,14 +12,15 @@ export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       on("before:run", async (details) => {
-        console.log("override before:run");
-        await beforeRunHook(details);
-      });
+        console.log("override before:run")
+        await beforeRunHook(details)
+      })
 
       on("after:run", async () => {
-        console.log("override after:run");
-        await afterRunHook();
-      });
+        console.log("override after:run")
+        await afterRunHook()
+      })
+      getCompareSnapshotsPlugin(on, config)
     },
     // changed path to test folders
     fixturesFolder: "cypress/productTests/fixtures",
@@ -27,4 +29,4 @@ export default defineConfig({
     video: false,
     baseUrl: "https://thinking-tester-contact-list.herokuapp.com",
   },
-});
+})

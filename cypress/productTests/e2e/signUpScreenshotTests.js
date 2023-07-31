@@ -19,68 +19,19 @@ const email = faker.internet.email()
 const invalidPassword = faker.internet.password({ length: 6 })
 const validPassword = faker.internet.password({ length: 7 })
 
-describe("Sign up page ", () => {
+describe("Sign up - Screenshot tests ", () => {
   beforeEach(() => {
     cy.visit(url.loginPage)
   })
 
   /**
-   * Basic test for Sign up
+   * Basic screenshot test for Sign up
    */
-  it("Check the 'Log In' URL", () => {
+  it.only("Click on [Submit] button with no filled in field", () => {
     //Click on [Sign up] button
     clickSimpleOnNthElement(locators.signUp.signInButton)
-    //Check the 'Sign Up' URL
-    checkURL(url.baseURL + url.signInPage)
-  })
-
-  /**
-   * Basic test for Sign up
-   */
-  it("Cancel the 'Sign up' process", () => {
-    //Click on [Sign up] button
-    clickSimpleOnNthElement(locators.signUp.signInButton)
-    //Check the 'Sign Up' URL
-    checkURL(url.baseURL + url.signInPage)
-    //Click on [Cancel] button
-    clickSimpleOnNthElement(locators.signUp.cancelButton)
-    //Check that the URL has changed (you shoukld be on 'Log in' page)
-    checkURL(url.baseURL + url.loginPage)
-  })
-
-  /**
-   * Basic test for Sign up
-   */
-  it("Submit the form with no data", () => {
-    //Click on [Sign up] button
-    clickSimpleOnNthElement(locators.signUp.signInButton)
-    //Check the 'Sign Up' URL
-    checkURL(url.baseURL + url.signInPage)
-    //Click on [Cancel] button
-    clickSimpleOnNthElement(locators.signUp.cancelButton)
-    //Check that the URL has changed (you shoukld be on 'Log in' page)
-    checkURL(url.baseURL + url.loginPage)
-  })
-
-  /**
-   * Basic test for Sign up
-   */
-  it("Click on [Submit] button with no filled in field", () => {
-    //Click on [Sign up] button
-    clickSimpleOnNthElement(locators.signUp.signInButton)
-    //Check that no error message displayed
-    checkElementState(
-      locators.signUp.errorMessage,
-      basicData.stateData.notBeVisible
-    )
     //Click on [Submit] button
     clickSimpleOnNthElement(locators.signUp.submitButton)
-    //Check the presence of the error when there is no filled in field
-    checkElementStateAndHasText(
-      locators.signUp.errorMessage,
-      basicData.stateData.beVisible,
-      data.signUp.noFilledInFieldErrorMessage
-    )
   })
 
   /**

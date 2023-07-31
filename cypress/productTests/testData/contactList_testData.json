@@ -1,6 +1,6 @@
 {
     "logIn": {
-        
+        "loginError": "Incorrect username or password"
     },
 
     "signUp": {
