@@ -5,8 +5,8 @@
  *
  */
 export const checkURL = (url) => {
-  cy.url().should("eq", url);
-};
+  cy.url().should("eq", url)
+}
 
 /**
  * Click simple on element
@@ -15,8 +15,8 @@ export const checkURL = (url) => {
  *
  */
 export const clickSimpleOnNthElement = (elementLocator) => {
-  cy.get(elementLocator).click();
-};
+  cy.get(elementLocator).click()
+}
 
 /**
  * Check the state of the element
@@ -26,8 +26,8 @@ export const clickSimpleOnNthElement = (elementLocator) => {
  *
  */
 export const checkElementState = (elementLocator, state) => {
-  cy.get(elementLocator).should(state);
-};
+  cy.get(elementLocator).should(state)
+}
 
 /**
  * Check the state of the element
@@ -42,9 +42,9 @@ export const checkElementStateAndHaveText = (elementLocator, state, text) => {
     .should(state)
     .invoke("text")
     .then((elementText) => {
-      expect(elementText).to.eq(text);
-    });
-};
+      expect(elementText).to.eq(text)
+    })
+}
 
 /**
  * Type text with no click() method
@@ -54,5 +54,5 @@ export const checkElementStateAndHaveText = (elementLocator, state, text) => {
  *
  */
 export const typeTextSimple = (elementLocator, textValue) => {
-  cy.get(elementLocator).type(textValue);
-};
+  cy.get(elementLocator).type(textValue)
+}
