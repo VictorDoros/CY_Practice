@@ -1,23 +1,13 @@
 import {
-  checkURL,
   clickSimpleOnNthElement,
-  checkElementState,
-  checkElementStateAndHasText,
   typeTextSimple,
+  compareSnapshot,
 } from "../functions/functions.js"
 
 import url from "../urls/urls.json"
 import data from "../testData/contactList_testData.json"
 import locators from "../fixtures/contactList_selectors.json"
-import basicData from "../basicData/basic_data.json"
 import { faker } from "@faker-js/faker"
-
-//Generate random credentials
-const firstName = faker.person.firstName()
-const lastName = faker.person.lastName()
-const email = faker.internet.email()
-const invalidPassword = faker.internet.password({ length: 6 })
-const validPassword = faker.internet.password({ length: 7 })
 
 describe("Sign up - Screenshot tests ", () => {
   beforeEach(() => {
@@ -27,142 +17,86 @@ describe("Sign up - Screenshot tests ", () => {
   /**
    * Basic screenshot test for Sign up
    */
-  it.only("Click on [Submit] button with no filled in field", () => {
+  it("Click on [Submit] button with no filled in field", () => {
     //Click on [Sign up] button
     clickSimpleOnNthElement(locators.signUp.signInButton)
     //Click on [Submit] button
     clickSimpleOnNthElement(locators.signUp.submitButton)
+    //Take a screenshot with the displayed error
+    cy.wait(500)
+    compareSnapshot(data.screenshotTest.firstSignUpError)
   })
 
   /**
-   * Basic test for Sign up
+   * Basic screenshot test for Sign up
    */
   it("Fill in the 'First name' field and click on [Submit] button", () => {
     //Click on [Sign up] button
     clickSimpleOnNthElement(locators.signUp.signInButton)
-    //Check that no error message displayed
-    checkElementState(
-      locators.signUp.errorMessage,
-      basicData.stateData.notBeVisible
-    )
     //Fill in the 'First name' field e.g. "Carol"
-    typeTextSimple(locators.signUp.firstNameField, firstName)
+    typeTextSimple(locators.signUp.firstNameField, data.signUp.firstName)
     //Click on [Submit] button
     clickSimpleOnNthElement(locators.signUp.submitButton)
-    //Check the presence of the error when only the 'First name' field is filled in
-    checkElementStateAndHasText(
-      locators.signUp.errorMessage,
-      basicData.stateData.beVisible,
-      data.signUp.errorMessageWithoutFirstName
-    )
+    //Take a screenshot with the displayed error
+    cy.wait(500)
+    compareSnapshot(data.screenshotTest.secondSignUpError)
   })
 
   /**
-   * Basic test for Sign up
+   * Basic screenshot test for Sign up
    */
   it("Fill in the 'First name' and 'Last name' fiels and click on [Submit] button", () => {
     //Click on [Sign up] button
     clickSimpleOnNthElement(locators.signUp.signInButton)
-    //Check that no error message displayed
-    checkElementState(
-      locators.signUp.errorMessage,
-      basicData.stateData.notBeVisible
-    )
     //Fill in the 'First name' field
-    typeTextSimple(locators.signUp.firstNameField, firstName)
+    typeTextSimple(locators.signUp.firstNameField, data.signUp.firstName)
     //Fill in the 'Last name' field e.g. "Marks"
-    typeTextSimple(locators.signUp.lastNameField, lastName)
+    typeTextSimple(locators.signUp.lastNameField, data.signUp.lastName)
     //Click on [Submit] button
     clickSimpleOnNthElement(locators.signUp.submitButton)
-    //Check the presence of the error when only the 'First name' field is filled in
-    checkElementStateAndHasText(
-      locators.signUp.errorMessage,
-      basicData.stateData.beVisible,
-      data.signUp.errorMessageWithoutFirstNameLastName
-    )
+    //Take a screenshot with the displayed error
+    cy.wait(500)
+    compareSnapshot(data.screenshotTest.thirdSignUpError)
   })
 
   /**
-   * Basic test for Sign up
+   * Basic screenshot test for Sign up
    */
   it("Fill in the 'First name', 'Last name' and 'Email' fiels and click on [Submit] button", () => {
     //Click on [Sign up] button
     clickSimpleOnNthElement(locators.signUp.signInButton)
-    //Check that no error message displayed
-    checkElementState(
-      locators.signUp.errorMessage,
-      basicData.stateData.notBeVisible
-    )
     //Fill in the 'First name' field e.g. "Carol"
-    typeTextSimple(locators.signUp.firstNameField, firstName)
+    typeTextSimple(locators.signUp.firstNameField, data.signUp.firstName)
     //Fill in the 'Last name' field e.g. "Marks"
-    typeTextSimple(locators.signUp.lastNameField, lastName)
+    typeTextSimple(locators.signUp.lastNameField, data.signUp.lastName)
     //Fill in the 'Email' field e.g. "carolmarks@email.com"
-    typeTextSimple(locators.signUp.emailField, email)
+    typeTextSimple(locators.signUp.emailField, data.signUp.email)
     //Click on [Submit] button
     clickSimpleOnNthElement(locators.signUp.submitButton)
-    //Check the presence of the error when only the 'First name' field is filled in
-    checkElementStateAndHasText(
-      locators.signUp.errorMessage,
-      basicData.stateData.beVisible,
-      data.signUp.errorMessageWithoutFirstNameLastNameEmail
-    )
+    //Take a screenshot with the displayed error
+    cy.wait(500)
+    compareSnapshot(data.screenshotTest.forthSignUpError)
   })
 
   /**
-   * Basic test for Sign up
+   * Basic screenshot test for Sign up
    */
-  it("Fill in all the fiels with an invalid password and click on [Submit] button", () => {
+  it("Fill in all the fiels with a invalid password and click on [Submit] button", () => {
     //Click on [Sign up] button
     clickSimpleOnNthElement(locators.signUp.signInButton)
-    //Check that no error message displayed
-    checkElementState(
-      locators.signUp.errorMessage,
-      basicData.stateData.notBeVisible
-    )
     //Fill in the 'First name' field e.g. "Carol"
-    typeTextSimple(locators.signUp.firstNameField, firstName)
+    typeTextSimple(locators.signUp.firstNameField, data.signUp.firstName)
     //Fill in the 'Last name' field e.g. "Marks"
-    typeTextSimple(locators.signUp.lastNameField, lastName)
+    typeTextSimple(locators.signUp.lastNameField, data.signUp.lastName)
     //Fill in the 'Email' field e.g. "carolmarks@email.com"
-    typeTextSimple(locators.signUp.emailField, email)
+    typeTextSimple(locators.signUp.emailField, data.signUp.email)
     //Fill in the 'Password' field e.g. "123456"
-    typeTextSimple(locators.signUp.passwordField, invalidPassword)
+    typeTextSimple(locators.signUp.passwordField, data.signUp.invalidPassword)
     //Click on [Submit] button
     clickSimpleOnNthElement(locators.signUp.submitButton)
-    //Check the presence of the error when only the 'First name' field is filled in
-    checkElementStateAndHasText(
-      locators.signUp.errorMessage,
-      basicData.stateData.beVisible,
-      data.signUp.errorMessageInvalidPassowrd_firstPart +
-        invalidPassword +
-        data.signUp.errorMessageInvalidPassowrd_secondPart
-    )
-  })
-
-  /**
-   * Basic test for Sign up
-   */
-  it("Fill in all the fiels with a valid password and click on [Submit] button", () => {
-    //Click on [Sign up] button
-    clickSimpleOnNthElement(locators.signUp.signInButton)
-    //Check that no error message displayed
-    checkElementState(
-      locators.signUp.errorMessage,
-      basicData.stateData.notBeVisible
-    )
-    //Fill in the 'First name' field e.g. "Carol"
-    typeTextSimple(locators.signUp.firstNameField, firstName)
-    //Fill in the 'Last name' field e.g. "Marks"
-    typeTextSimple(locators.signUp.lastNameField, lastName)
-    //Fill in the 'Email' field e.g. "carolmarks@email.com"
-    typeTextSimple(locators.signUp.emailField, email)
-    //Fill in the 'Password' field e.g. "123456"
-    typeTextSimple(locators.signUp.passwordField, validPassword)
-    //Click on [Submit] button
-    clickSimpleOnNthElement(locators.signUp.submitButton)
-    //Check that the page was switched to 'Contact list'
-    checkURL(url.baseURL + url.contactList)
+    //Take a screenshot with the displayed error
+    cy.wait(500)
+    compareSnapshot(data.screenshotTest.fifthSignUpError)
   })
 
   after(() => {

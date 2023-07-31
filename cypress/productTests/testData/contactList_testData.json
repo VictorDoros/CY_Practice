@@ -10,8 +10,19 @@
         "errorMessageWithoutFirstNameLastNameEmail": "User validation failed: password: Path `password` is required.",
         "errorMessageInvalidPassowrd_firstPart": "User validation failed: password: Path `password` (`",
         "errorMessageInvalidPassowrd_secondPart": "`) is shorter than the minimum allowed length (7).",
+        "firstName": "Carol",
+        "lastName": "Marks",
         "email": "carolmarks@email.com",
-        "password": "123456a"
+        "validPassword": "123456a",
+        "invalidPassword": "123456"
+    },
+
+    "screenshotTest": {
+        "firstSignUpError": "First Sign up error",
+        "secondSignUpError": "Second Sign up error",
+        "thirdSignUpError": "Third Sign up error",
+        "forthSignUpError": "Forth Sign up error",
+        "fifthSignUpError": "Fifth Sign up error"
     }
 
 }
