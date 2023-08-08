@@ -66,3 +66,38 @@ export const typeTextSimple = (elementLocator, textValue) => {
 export const compareSnapshot = (numeOfFile) => {
   cy.compareSnapshot(numeOfFile)
 }
+
+/**
+ * Wait until element is displayed or hidden
+ *
+ * @param {string} elementLocator The element found on the page
+ * @param {string} state The state of the found element
+ *
+ */
+export const waitUntilElementIsDisplayedOrHidden = (elementLocator, state) => {
+  cy.get(elementLocator, { timeout: 10000 }).should(state)
+}
+
+/**
+ * Wait until element with a specific text is displayed or hidden
+ *
+ * @param {string} elementLocator The element found on the page
+ * @param {string} text Text containing the found element
+ * @param {string} state The state of the found element
+ *
+ */
+export const waitUntilElementWithTextIsDisplayedOrHidden = (elementLocator, text, state) => {
+  cy.get(elementLocator).contains(text, { timeout: 10000 }).should(state)
+}
+
+/**
+ * Wait until an element has a specific property value
+ *
+ * @param {string} elementLocator The element found on the page
+ * @param {string} cssProperty The property of css e.g. border, background-color
+ * @param {string} value The value of CSS property
+ *
+ */
+export const waitUntilElementHasPropertyValue = (elementLocator, cssProperty, value) => {
+  cy.get(elementLocator, { timeout: 10000 }).should('have.css', cssProperty, value)
+}
