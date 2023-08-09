@@ -13,6 +13,7 @@
     "colors": "^1.4.0",
     "cypress": "^12.17.3",
     "cypress-image-diff-js": "^1.26.0",
+    "cypress-map": "^1.21.0",
     "cypress-mochawesome-reporter": "^3.5.1",
     "cypress-real-events": "^1.9.1",
     "debug": "^4.3.4",
