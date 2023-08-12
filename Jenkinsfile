@@ -19,9 +19,11 @@ pipeline{
         }
         stage("Testing"){
             steps{
+                wrap([$class: 'Xvfb', additionalOptions: '', assignedLabels: '', autoDisplayName: true, debug: true, displayNameOffset: 0, installationName: 'XVFB', parallelBuild: true, screen: '1024x758x24', timeout: 25]){
                 sh "npm install"
                 sh "./node_modules/.bin/cypress install --force"
                 sh "npx cypress run --headless --browser ${BROWSER} --spec ${SPEC}"
+                }
             }
         }
         stage("Deploying"){
