@@ -22,7 +22,7 @@ pipeline{
                 sh "npm install"
                 sh "./node_modules/.bin/cypress install --force"
                 sh "pkill Xvfb"
-                sh "NO_COLOR=1 npx cypress run"
+                sh "npx cypress run"
             }
         }
         stage("Deploying"){
