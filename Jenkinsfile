@@ -24,7 +24,7 @@ pipeline{
                 sh "NO_COLOR=1 npx cypress run"
             }
         }
-        stage{"Deploying"}{
+        stage("Deploying"){
             steps{
                 echo "Deploy the application"
             }
