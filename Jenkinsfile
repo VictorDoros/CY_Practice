@@ -22,6 +22,7 @@ pipeline{
                 sh "npm install"
                 sh "./node_modules/.bin/cypress install --force"
                 sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                sh "pkill Xvfb"
             }
         }
         stage("Deploying"){
