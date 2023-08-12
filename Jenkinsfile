@@ -21,7 +21,7 @@ pipeline{
             steps{
                 sh "npm install"
                 sh "./node_modules/.bin/cypress install --force"
-                sh "npx cypress run"
+                sh "NO_COLOR=1 npx cypress run"
             }
         }
         stage("Deploying"){
