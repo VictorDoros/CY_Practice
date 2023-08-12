@@ -7,6 +7,10 @@
   "author": "product team",
   "type": "module",
   "main": "index.js",
+  "scripts": {
+    "cy:openMode": "npx cypress open",
+    "cy:headlessMode": "npx cypress run"
+  },
   "devDependencies": {
     "@cypress/grep": "^3.1.5",
     "@cypress/xvfb": "^1.2.4",
