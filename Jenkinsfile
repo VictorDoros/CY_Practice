@@ -21,7 +21,7 @@ pipeline{
             steps{
                 sh "npm install"
                 sh "./node_modules/.bin/cypress install --force"
-                sh "NO_COLOR=1 npx cypress run"
+                sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
             }
         }
         stage("Deploying"){
@@ -30,10 +30,10 @@ pipeline{
             }
         }
     }
-    // post{
-    //     always{
-    //         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
-    //     }
-    // }
+    post{
+        always{
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+        }
+    }
 
 }
