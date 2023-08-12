@@ -21,7 +21,6 @@ pipeline{
             steps{
                 sh "npm install"
                 sh "./node_modules/.bin/cypress install --force"
-                sh "pkill Xvfb"
                 sh "npx cypress run"
             }
         }
