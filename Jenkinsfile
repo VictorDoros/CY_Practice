@@ -4,12 +4,12 @@ pipeline{
 
     parameters{
         string(name: "SPEC", defaultValue: "cypress/productTests/e2e", description: "Enter the scripts path that you want to execute")
-        choise(name: "BROWSER", choices: ["chrome", "edge"], description: "Choise the browser where you want to execute your scripts")
+        choice(name: "BROWSER", choices: ["chrome", "edge"], description: "Choise the browser where you want to execute your scripts")
     }
 
-    options{
-        ansiColor("xtrem")
-    }
+    // options{
+    //     ansiColor("xtrem")
+    // }
 
     stages{
         stage("Building"){
@@ -23,11 +23,11 @@ pipeline{
                 sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
             }
         }
-        stage{"Deploying"}{
-            steps{
-                echo "Deploy the application"
-            }
-        }
+        // stage{"Deploying"}{
+        //     steps{
+        //         echo "Deploy the application"
+        //     }
+        // }
     }
     post{
         always{
