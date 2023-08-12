@@ -19,11 +19,9 @@ pipeline{
         }
         stage("Testing"){
             steps{
-                sh "apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb"
                 sh "npm install"
                 sh "./node_modules/.bin/cypress install --force"
-                sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
-                sh "pkill Xvfb"
+                sh "npx cypress run --headless --browser ${BROWSER} --spec ${SPEC}"
             }
         }
         stage("Deploying"){
