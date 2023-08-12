@@ -23,7 +23,7 @@ pipeline{
                 // sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
                 sh "npm install"
                 sh "./node_modules/.bin/cypress install --force"
-                sh "NO_COLOR=1 npx cypress run ${Extra_Config}"
+                sh "NO_COLOR=1 npx cypress run"
             }
         }
         // stage{"Deploying"}{
