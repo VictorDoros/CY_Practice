@@ -13,6 +13,7 @@ export default defineConfig({
   },
   env: {
     grepFilterSpecs: true,
+    grepOmitFiltered: true
   },
   //Config for cypress-mochawesome-reporter plugin
   reporter: "cypress-mochawesome-reporter",

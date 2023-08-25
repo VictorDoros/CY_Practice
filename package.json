@@ -9,7 +9,11 @@
   "main": "index.js",
   "scripts": {
     "cy:openMode": "npx cypress open",
-    "cy:headlessMode": "npx cypress run"
+    "cy:headlessMode": "npx cypress run",
+    "cy:runStagingOpenMode":"npx cypress open --config baseUrl=<stagingLink>",
+    "cy:runProdOpenMode": "",
+    "cy:runStagingHeadlessMode": "",
+    "cy:runProdHeadlessMode": ""
   },
   "devDependencies": {
     "@cypress/grep": "^3.1.5",
