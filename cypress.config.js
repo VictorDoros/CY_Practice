@@ -19,6 +19,15 @@ export default defineConfig({
 
   e2e: {
     setupNodeEvents(on, config) {
+      // const version = config.env.VERSION || "prod"
+
+      // const urls = {
+      //   local: "https://thinking-tester-contact-list.herokuapp.com",
+      //   staging: "https://staging.example.com",
+      //   prod: "http://localhost:3000"
+      // }
+
+      // config.baseUrl = urls[version]
       cypressGrepPlugin(config)
       on("before:run", async (details) => {
         console.log("override before:run")

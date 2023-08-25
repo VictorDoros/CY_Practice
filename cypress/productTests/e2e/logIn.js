@@ -11,7 +11,7 @@ import data from "../testData/contactList_testData.json"
 import locators from "../fixtures/contactList_selectors.json"
 import basicData from "../basicData/basic_data.json"
 
-describe("Log in page ", { tags: ["@functional"] }, () => {
+describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
   beforeEach(() => {
     cy.visit(url.loginPage)
   })
