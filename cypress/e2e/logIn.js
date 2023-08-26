@@ -8,8 +8,8 @@ import {
 
 import url from "../urls/urls.json"
 import data from "../fixtures/contactList_testData.json"
-import locators from "../selectors/contactList_selectors.json"
 import basicData from "../support/basic_data.json"
+import logIn from "../selectors/logIn.sel"
 
 describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
   beforeEach(() => {
@@ -29,11 +29,11 @@ describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
    */
   it("Log in to app", () => {
     //Type an existent email
-    typeTextSimple(locators.logIn.emailField, data.logIn.email)
+    typeTextSimple(logIn.emailField, data.logIn.email)
     //Insert the password
-    typeTextSimple(locators.logIn.passwordField, data.logIn.correctPassword)
+    typeTextSimple(logIn.passwordField, data.logIn.correctPassword)
     //Click on [Submit] button
-    clickSimpleOnNthElement(locators.logIn.submitButton)
+    clickSimpleOnNthElement(logIn.submitButton)
     //Confirm that the URL has been changed and you were logged in
     checkURL(url.baseURL + url.contactList)
   })
@@ -43,15 +43,12 @@ describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
    */
   it("Hit the [Submit] button without filling in the fields", () => {
     //Check that no error is displayed
-    checkElementState(
-      locators.logIn.errorMessage,
-      basicData.stateData.notBeVisible
-    )
+    checkElementState(logIn.errorMessage, basicData.stateData.notBeVisible)
     //Click on [Submit] button
-    clickSimpleOnNthElement(locators.logIn.submitButton)
+    clickSimpleOnNthElement(logIn.submitButton)
     //Check the presence of the error and it's message
     checkElementStateAndHasText(
-      locators.logIn.errorMessage,
+      logIn.errorMessage,
       basicData.stateData.beVisible,
       data.logIn.loginError
     )
@@ -62,19 +59,16 @@ describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
    */
   it("Fill in the fields with a wrong password and click on [Submit] button", () => {
     //Check that no error is displayed
-    checkElementState(
-      locators.logIn.errorMessage,
-      basicData.stateData.notBeVisible
-    )
+    checkElementState(logIn.errorMessage, basicData.stateData.notBeVisible)
     //Type an existent email
-    typeTextSimple(locators.logIn.emailField, data.logIn.email)
+    typeTextSimple(logIn.emailField, data.logIn.email)
     //Insert the incorrect password
-    typeTextSimple(locators.logIn.passwordField, data.logIn.incorrectPassword)
+    typeTextSimple(logIn.passwordField, data.logIn.incorrectPassword)
     //Click on [Submit] button
-    clickSimpleOnNthElement(locators.logIn.submitButton)
+    clickSimpleOnNthElement(logIn.submitButton)
     //Check the presence of the error and it's message
     checkElementStateAndHasText(
-      locators.logIn.errorMessage,
+      logIn.errorMessage,
       basicData.stateData.beVisible,
       data.logIn.loginError
     )
