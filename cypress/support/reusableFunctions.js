@@ -9,6 +9,16 @@ export const checkURL = (url) => {
 }
 
 /**
+ * Check the current URL is equal to expected URL
+ *
+ * @param {string} text The description of the step
+ *
+ */
+export const stepDescription = (text) => {
+  cy.step(text)
+}
+
+/**
  * Click simple on element
  *
  * @param {string} elementLocator Locator of element id, class...

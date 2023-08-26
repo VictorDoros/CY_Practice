@@ -4,6 +4,7 @@ import {
   checkElementState,
   checkElementStateAndHasText,
   typeTextSimple,
+  stepDescription,
 } from "../support/reusableFunctions"
 
 import url from "../urls/urls.json"
@@ -21,6 +22,7 @@ const validPassword = faker.internet.password({ length: 7 })
 
 describe("Sign up page ", { tags: ["@functional"] }, () => {
   beforeEach(() => {
+    stepDescription("Reach the page")
     cy.visit(url.loginPage)
   })
 
@@ -28,9 +30,10 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
    * Basic test for Sign up
    */
   it("Check the 'Log In' URL", () => {
-    //Click on [Sign up] button
+    stepDescription("Click on [Sign up] button")
     clickSimpleOnNthElement(signUp.signInButton)
-    //Check the 'Sign Up' URL
+
+    stepDescription("Check the 'Sign Up' URL")
     checkURL(url.baseURL + url.signInPage)
   })
 
@@ -38,13 +41,18 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
    * Basic test for Sign up
    */
   it("Cancel the 'Sign up' process", () => {
-    //Click on [Sign up] button
+    stepDescription("Click on [Sign up] button")
     clickSimpleOnNthElement(signUp.signInButton)
-    //Check the 'Sign Up' URL
+
+    stepDescription("Check the 'Sign Up' URL")
     checkURL(url.baseURL + url.signInPage)
-    //Click on [Cancel] button
+
+    stepDescription("Click on [Cancel] button")
     clickSimpleOnNthElement(signUp.cancelButton)
-    //Check that the URL has changed (you shoukld be on 'Log in' page)
+
+    stepDescription(
+      "Check that the URL has changed (you shoukld be on 'Log in' page)"
+    )
     checkURL(url.baseURL + url.loginPage)
   })
 
@@ -52,13 +60,18 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
    * Basic test for Sign up
    */
   it("Submit the form with no data", () => {
-    //Click on [Sign up] button
+    stepDescription("Click on [Sign up] button")
     clickSimpleOnNthElement(signUp.signInButton)
-    //Check the 'Sign Up' URL
+
+    stepDescription("Check the 'Sign Up' URL")
     checkURL(url.baseURL + url.signInPage)
-    //Click on [Cancel] button
+
+    stepDescription("Click on [Cancel] button")
     clickSimpleOnNthElement(signUp.cancelButton)
-    //Check that the URL has changed (you shoukld be on 'Log in' page)
+
+    stepDescription(
+      "Check that the URL has changed (you shoukld be on 'Log in' page)"
+    )
     checkURL(url.baseURL + url.loginPage)
   })
 
@@ -66,13 +79,18 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
    * Basic test for Sign up
    */
   it("Click on [Submit] button with no filled in field", () => {
-    //Click on [Sign up] button
+    stepDescription("Click on [Sign up] button")
     clickSimpleOnNthElement(signUp.signInButton)
-    //Check that no error message displayed
+
+    stepDescription("Check that no error message displayed")
     checkElementState(signUp.errorMessage, basicData.stateData.notBeVisible)
-    //Click on [Submit] button
+
+    stepDescription("Click on [Submit] button")
     clickSimpleOnNthElement(signUp.submitButton)
-    //Check the presence of the error when there is no filled in field
+
+    stepDescription(
+      "Check the presence of the error when there is no filled in field"
+    )
     checkElementStateAndHasText(
       signUp.errorMessage,
       basicData.stateData.beVisible,
@@ -84,15 +102,21 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
    * Basic test for Sign up
    */
   it("Fill in the 'First name' field and click on [Submit] button", () => {
-    //Click on [Sign up] button
+    stepDescription("Click on [Sign up] button")
     clickSimpleOnNthElement(signUp.signInButton)
-    //Check that no error message displayed
+
+    stepDescription("Check that no error message displayed")
     checkElementState(signUp.errorMessage, basicData.stateData.notBeVisible)
-    //Fill in the 'First name' field e.g. "Carol"
+
+    stepDescription("Fill in the 'First name' field")
     typeTextSimple(signUp.firstNameField, firstName)
-    //Click on [Submit] button
+
+    stepDescription("Click on [Submit] button")
     clickSimpleOnNthElement(signUp.submitButton)
-    //Check the presence of the error when only the 'First name' field is filled in
+
+    stepDescription(
+      "Check the presence of the error when only the 'First name' field is filled in"
+    )
     checkElementStateAndHasText(
       signUp.errorMessage,
       basicData.stateData.beVisible,
@@ -104,17 +128,24 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
    * Basic test for Sign up
    */
   it("Fill in the 'First name' and 'Last name' fields and click on [Submit] button", () => {
-    //Click on [Sign up] button
+    stepDescription("Click on [Sign up] button")
     clickSimpleOnNthElement(signUp.signInButton)
-    //Check that no error message displayed
+
+    stepDescription("Check that no error message displayed")
     checkElementState(signUp.errorMessage, basicData.stateData.notBeVisible)
-    //Fill in the 'First name' field
+
+    stepDescription("Fill in the 'First name' field")
     typeTextSimple(signUp.firstNameField, firstName)
-    //Fill in the 'Last name' field e.g. "Marks"
+
+    stepDescription("Fill in the 'Last name' field")
     typeTextSimple(signUp.lastNameField, lastName)
-    //Click on [Submit] button
+
+    stepDescription("Click on [Submit] button")
     clickSimpleOnNthElement(signUp.submitButton)
-    //Check the presence of the error when only the 'First name' field is filled in
+
+    stepDescription(
+      "Check the presence of the error when only the 'First name' field is filled in"
+    )
     checkElementStateAndHasText(
       signUp.errorMessage,
       basicData.stateData.beVisible,
@@ -126,19 +157,27 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
    * Basic test for Sign up
    */
   it("Fill in the 'First name', 'Last name' and 'Email' fields and click on [Submit] button", () => {
-    //Click on [Sign up] button
+    stepDescription("Click on [Sign up] button")
     clickSimpleOnNthElement(signUp.signInButton)
-    //Check that no error message displayed
+
+    stepDescription("Check that no error message displayed")
     checkElementState(signUp.errorMessage, basicData.stateData.notBeVisible)
-    //Fill in the 'First name' field e.g. "Carol"
+
+    stepDescription("Fill in the 'First name' field")
     typeTextSimple(signUp.firstNameField, firstName)
-    //Fill in the 'Last name' field e.g. "Marks"
+
+    stepDescription("Fill in the 'Last name' field")
     typeTextSimple(signUp.lastNameField, lastName)
-    //Fill in the 'Email' field e.g. "carolmarks@email.com"
+
+    stepDescription("Fill in the 'Email' field")
     typeTextSimple(signUp.emailField, email)
-    //Click on [Submit] button
+
+    stepDescription("Click on [Submit] button")
     clickSimpleOnNthElement(signUp.submitButton)
-    //Check the presence of the error when only the 'First name' field is filled in
+
+    stepDescription(
+      "Check the presence of the error when only the 'First name' field is filled in"
+    )
     checkElementStateAndHasText(
       signUp.errorMessage,
       basicData.stateData.beVisible,
@@ -150,21 +189,30 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
    * Basic test for Sign up
    */
   it("Fill in all the fields with an invalid password and click on [Submit] button", () => {
-    //Click on [Sign up] button
+    stepDescription("Click on [Sign up] button")
     clickSimpleOnNthElement(signUp.signInButton)
-    //Check that no error message displayed
+
+    stepDescription("Check that no error message displayed")
     checkElementState(signUp.errorMessage, basicData.stateData.notBeVisible)
-    //Fill in the 'First name' field e.g. "Carol"
+
+    stepDescription("Fill in the 'First name' field")
     typeTextSimple(signUp.firstNameField, firstName)
-    //Fill in the 'Last name' field e.g. "Marks"
+
+    stepDescription("Fill in the 'Last name' field")
     typeTextSimple(signUp.lastNameField, lastName)
-    //Fill in the 'Email' field e.g. "carolmarks@email.com"
+
+    stepDescription("Fill in the 'Email' field")
     typeTextSimple(signUp.emailField, email)
-    //Fill in the 'Password' field e.g. "123456"
+
+    stepDescription("Fill in the 'Password' field")
     typeTextSimple(signUp.passwordField, invalidPassword)
-    //Click on [Submit] button
+
+    stepDescription("Click on [Submit] button")
     clickSimpleOnNthElement(signUp.submitButton)
-    //Check the presence of the error when only the 'First name' field is filled in
+
+    stepDescription(
+      "Check the presence of the error when only the 'First name' field is filled in"
+    )
     checkElementStateAndHasText(
       signUp.errorMessage,
       basicData.stateData.beVisible,
@@ -178,21 +226,28 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
    * Basic test for Sign up
    */
   it("Fill in all the fields with a valid password and click on [Submit] button", () => {
-    //Click on [Sign up] button
+    stepDescription("Click on [Sign up] button")
     clickSimpleOnNthElement(signUp.signInButton)
-    //Check that no error message displayed
+
+    stepDescription("Check that no error message displayed")
     checkElementState(signUp.errorMessage, basicData.stateData.notBeVisible)
-    //Fill in the 'First name' field e.g. "Carol"
+
+    stepDescription("Fill in the 'First name' field")
     typeTextSimple(signUp.firstNameField, firstName)
-    //Fill in the 'Last name' field e.g. "Marks"
+
+    stepDescription("Fill in the 'Last name' field")
     typeTextSimple(signUp.lastNameField, lastName)
-    //Fill in the 'Email' field e.g. "carolmarks@email.com"
+
+    stepDescription("Fill in the 'Email' field")
     typeTextSimple(signUp.emailField, email)
-    //Fill in the 'Password' field e.g. "123456"
+
+    stepDescription("Fill in the 'Password' field")
     typeTextSimple(signUp.passwordField, validPassword)
-    //Click on [Submit] button
+
+    stepDescription("Click on [Submit] button")
     clickSimpleOnNthElement(signUp.submitButton)
-    //Check that the page was switched to 'Contact list'
+
+    stepDescription("Check that the page was switched to 'Contact list'")
     checkURL(url.baseURL + url.contactList)
   })
 
