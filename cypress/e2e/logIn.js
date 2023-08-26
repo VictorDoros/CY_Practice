@@ -4,12 +4,12 @@ import {
   typeTextSimple,
   checkElementState,
   checkElementStateAndHasText,
-} from "../functions/functions.js"
+} from "../support/reusableFunctions"
 
 import url from "../urls/urls.json"
-import data from "../testData/contactList_testData.json"
-import locators from "../fixtures/contactList_selectors.json"
-import basicData from "../basicData/basic_data.json"
+import data from "../fixtures/contactList_testData.json"
+import locators from "../selectors/contactList_selectors.json"
+import basicData from "../support/basic_data.json"
 
 describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
   beforeEach(() => {

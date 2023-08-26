@@ -44,7 +44,7 @@ export default defineConfig({
     },
     // changed path to test folders
     fixturesFolder: "cypress/productTests/fixtures",
-    specPattern: "cypress/productTests/e2e",
+    specPattern: "cypress/e2e",
 
     // Time, in milliseconds, to consider a test "slow" during cypress run. A slow test will display in orange text in the default reporter.
     slowTestThreshold: 15000,
