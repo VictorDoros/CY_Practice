@@ -56,7 +56,6 @@ export default defineConfig({
 
     //Setting video to false (it takes time while running a test suite, even if there is no error)
     video: false,
-    videoUploadOnPasses: false,
 
     baseUrl: "https://thinking-tester-contact-list.herokuapp.com",
   },
