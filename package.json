@@ -21,7 +21,7 @@
     "@faker-js/faker": "^8.0.2",
     "colors": "^1.4.0",
     "cy-spok": "^1.6.2",
-    "cypress": "^13.0.0",
+    "cypress": "^13.1.0",
     "cypress-image-diff-js": "^1.26.0",
     "cypress-map": "^1.21.0",
     "cypress-mochawesome-reporter": "^3.5.1",
