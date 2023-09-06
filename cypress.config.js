@@ -5,6 +5,7 @@ import {
 } from "cypress-mochawesome-reporter/lib/index.js"
 import getCompareSnapshotsPlugin from "cypress-image-diff-js/dist/plugin.js"
 import cypressGrepPlugin from "@cypress/grep/src/plugin.js"
+import replay from "@replayio/cypress"
 
 export default defineConfig({
   retries: {
@@ -31,6 +32,7 @@ export default defineConfig({
         await afterRunHook()
       })
       getCompareSnapshotsPlugin(on, config)
+      replay.default(on, config)
       return config
     },
     // changed path to test folders

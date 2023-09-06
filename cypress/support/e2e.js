@@ -20,6 +20,7 @@ import 'cypress-real-events/support'
 import compareSnapshotCommand from 'cypress-image-diff-js/dist/command'
 import registerCypressGrep from '@cypress/grep/src/support'
 import 'cypress-plugin-steps'
+require('@replayio/cypress/support')
 compareSnapshotCommand()
 registerCypressGrep()
 
