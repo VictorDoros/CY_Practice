@@ -2,5 +2,7 @@ module.exports = {
     emailField: "#email",
     passwordField: "#password",
     submitButton: "#submit",
-    errorMessage: "#error"
+    errorMessage: "#error",
+    signupButton: "#signup",
+    cancelButton: "#cancel"
 }

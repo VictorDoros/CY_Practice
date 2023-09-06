@@ -1,3 +1,5 @@
+import { Utility } from "../support/utility.js"
+
 import {
   checkURL,
   clickSimpleOnNthElement,
@@ -7,11 +9,14 @@ import {
   stepDescription,
 } from "../support/reusableFunctions"
 
-import url from "../urls/urls.json"
+import urls from "../urls/urls.json"
 import data from "../fixtures/contactList_testData.json"
 import signUp from "../selectors/signUp.sel"
 import basicData from "../support/basic_data.json"
 import { faker } from "@faker-js/faker"
+
+//Call getBaseUrl() to get environment specific url value
+const url = new Utility().getBaseUrl();
 
 //Generate random credentials
 const firstName = faker.person.firstName()
@@ -23,7 +28,7 @@ const validPassword = faker.internet.password({ length: 7 })
 describe("Sign up page ", { tags: ["@functional"] }, () => {
   beforeEach(() => {
     stepDescription("Reach the page")
-    cy.visit(url.loginPage)
+    cy.visit(urls.loginPage)
   })
 
   /**
@@ -34,7 +39,7 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
     clickSimpleOnNthElement(signUp.signInButton)
 
     stepDescription("Check the 'Sign Up' URL")
-    checkURL(url.baseURL + url.signInPage)
+    checkURL(url + urls.signInPage)
   })
 
   /**
@@ -45,7 +50,7 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
     clickSimpleOnNthElement(signUp.signInButton)
 
     stepDescription("Check the 'Sign Up' URL")
-    checkURL(url.baseURL + url.signInPage)
+    checkURL(url + urls.signInPage)
 
     stepDescription("Click on [Cancel] button")
     clickSimpleOnNthElement(signUp.cancelButton)
@@ -53,7 +58,7 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
     stepDescription(
       "Check that the URL has changed (you shoukld be on 'Log in' page)"
     )
-    checkURL(url.baseURL + url.loginPage)
+    checkURL(url + urls.loginPage)
   })
 
   /**
@@ -64,7 +69,7 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
     clickSimpleOnNthElement(signUp.signInButton)
 
     stepDescription("Check the 'Sign Up' URL")
-    checkURL(url.baseURL + url.signInPage)
+    checkURL(url + urls.signInPage)
 
     stepDescription("Click on [Cancel] button")
     clickSimpleOnNthElement(signUp.cancelButton)
@@ -72,7 +77,7 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
     stepDescription(
       "Check that the URL has changed (you shoukld be on 'Log in' page)"
     )
-    checkURL(url.baseURL + url.loginPage)
+    checkURL(url + urls.loginPage)
   })
 
   /**
@@ -248,7 +253,7 @@ describe("Sign up page ", { tags: ["@functional"] }, () => {
     clickSimpleOnNthElement(signUp.submitButton)
 
     stepDescription("Check that the page was switched to 'Contact list'")
-    checkURL(url.baseURL + url.contactList)
+    checkURL(url + urls.contactList)
   })
 
   after(() => {
