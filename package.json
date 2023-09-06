@@ -10,7 +10,7 @@
   "scripts": {
     "cy:openMode": "npx cypress open",
     "cy:headlessMode": "npx cypress run",
-    "cy:runStagingOpenMode": "npx cypress open --config baseUrl=<stagingLink>",
+    "cy:runStagingOpenMode": "npx cypress open --config baseUrl=https://thinking-tester-contact-list.herokuapp.com",
     "cy:runProdOpenMode": "",
     "cy:runStagingHeadlessMode": "",
     "cy:runProdHeadlessMode": ""
