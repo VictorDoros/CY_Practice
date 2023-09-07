@@ -2,7 +2,6 @@ name: Cypress tests
 on: [push]
 jobs:
   cypress-run:
-    name: Cypress run
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -11,6 +10,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
+          start: npm start
           record: true
         env:
           # pass the Cypress Cloud record key as an environment variable
