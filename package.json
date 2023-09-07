@@ -22,7 +22,7 @@
     "@replayio/cypress": "^1.1.6",
     "colors": "^1.4.0",
     "cy-spok": "^1.6.2",
-    "cypress": "^13.1.0",
+    "cypress": "^12.3.0",
     "cypress-image-diff-js": "^1.30.0",
     "cypress-map": "^1.21.1",
     "cypress-mochawesome-reporter": "^3.5.1",
