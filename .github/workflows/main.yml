@@ -1,0 +1,21 @@
+name: Cypress tests
+on: 
+  push:
+    branches:
+      - testBranch
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          install-command: npm ci --legacy-peer-deps
+          start: npm start
+          record: true
+        env:
+          # pass the Cypress Cloud record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.RECORD_REPLAY_API_KEY }}
