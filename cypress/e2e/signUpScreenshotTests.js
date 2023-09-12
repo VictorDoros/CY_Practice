@@ -7,8 +7,6 @@ import {
 import url from "../urls/urls.json"
 import data from "../fixtures/contactList_testData.json"
 import locators from "../selectors/contactList_selectors.json"
-import basicData from "../support/basic_data.json"
-import { faker } from "@faker-js/faker"
 
 describe("Sign up - Screenshot tests ", { tags: ["@visual"] }, () => {
   beforeEach(() => {
