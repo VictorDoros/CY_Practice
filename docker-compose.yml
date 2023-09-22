@@ -18,4 +18,4 @@ services:
     image: cypress/included:12.8.1
     working_dir: /cypress
     volumes:
-      - ./:/cypress      
+      - ./:/cypress
