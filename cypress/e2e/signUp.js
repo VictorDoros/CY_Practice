@@ -1,4 +1,4 @@
-import { Utility } from "../support/utility.js"
+import { Utility } from "../support/utility.ts"
 
 import {
   checkURL,
@@ -25,7 +25,7 @@ const email = faker.internet.email()
 const invalidPassword = faker.internet.password({ length: 6 })
 const validPassword = faker.internet.password({ length: 7 })
 
-describe("Sign up page ", { tags: ["@functional"] }, () => {
+describe("Sign up page ", { tags: ["@functional", "@signUp"] }, () => {
   beforeEach(() => {
     stepDescription("Reach the page")
     cy.visit(url)

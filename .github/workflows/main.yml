@@ -13,5 +13,5 @@ jobs:
       - name: Run Cypress Test
         uses: cypress-io/github-action@v6
         with:
-          command: npx cypress run --env grepTags=@functional
+          command: npx cypress run --env ENV="production",grepTags=@signUp
           browser: chrome
