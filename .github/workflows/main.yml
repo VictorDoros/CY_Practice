@@ -2,7 +2,7 @@ name: E2E regression
 on:
   push:
     branches:
-      - testBranch
+      - master
 jobs:
   Cypress-Test:
     runs-on: ubuntu-22.04
