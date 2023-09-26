@@ -1,3 +1,5 @@
+import { Utility } from "../support/utility.ts"
+
 import {
   clickSimpleOnNthElement,
   typeTextSimple,
@@ -5,11 +7,14 @@ import {
 } from "../support/reusableFunctions"
 
 import data from "../fixtures/contactList_testData.json"
-import locators from "../selectors/contactList_selectors.json"
+import signUp from "../selectors/signUp.sel"
+
+//Call getBaseUrl() to get environment specific url value
+const url = new Utility().getBaseUrl();
 
 describe("Sign up - Screenshot tests ", { tags: ["@visual"] }, () => {
   beforeEach(() => {
-    cy.visit(url.loginPage)
+    cy.visit(url)
   })
 
   /**
@@ -17,9 +22,9 @@ describe("Sign up - Screenshot tests ", { tags: ["@visual"] }, () => {
    */
   it("Click on [Submit] button with no filled in field", () => {
     //Click on [Sign up] button
-    clickSimpleOnNthElement(locators.signUp.signInButton)
+    clickSimpleOnNthElement(signUp.signInButton)
     //Click on [Submit] button
-    clickSimpleOnNthElement(locators.signUp.submitButton)
+    clickSimpleOnNthElement(signUp.submitButton)
     //Take a screenshot with the displayed error
     compareSnapshot(data.screenshotTest.firstSignUpError)
   })
@@ -29,11 +34,11 @@ describe("Sign up - Screenshot tests ", { tags: ["@visual"] }, () => {
    */
   it("Fill in the 'First name' field and click on [Submit] button", () => {
     //Click on [Sign up] button
-    clickSimpleOnNthElement(locators.signUp.signInButton)
+    clickSimpleOnNthElement(signUp.signInButton)
     //Fill in the 'First name' field e.g. "Carol"
-    typeTextSimple(locators.signUp.firstNameField, data.signUp.firstName)
+    typeTextSimple(signUp.firstNameField, data.signUp.firstName)
     //Click on [Submit] button
-    clickSimpleOnNthElement(locators.signUp.submitButton)
+    clickSimpleOnNthElement(signUp.submitButton)
     //Take a screenshot with the displayed error
     compareSnapshot(data.screenshotTest.secondSignUpError)
   })
@@ -43,13 +48,13 @@ describe("Sign up - Screenshot tests ", { tags: ["@visual"] }, () => {
    */
   it("Fill in the 'First name' and 'Last name' fiels and click on [Submit] button", () => {
     //Click on [Sign up] button
-    clickSimpleOnNthElement(locators.signUp.signInButton)
+    clickSimpleOnNthElement(signUp.signInButton)
     //Fill in the 'First name' field
-    typeTextSimple(locators.signUp.firstNameField, data.signUp.firstName)
+    typeTextSimple(signUp.firstNameField, data.signUp.firstName)
     //Fill in the 'Last name' field e.g. "Marks"
-    typeTextSimple(locators.signUp.lastNameField, data.signUp.lastName)
+    typeTextSimple(signUp.lastNameField, data.signUp.lastName)
     //Click on [Submit] button
-    clickSimpleOnNthElement(locators.signUp.submitButton)
+    clickSimpleOnNthElement(signUp.submitButton)
     //Take a screenshot with the displayed error
     compareSnapshot(data.screenshotTest.thirdSignUpError)
   })
@@ -59,15 +64,15 @@ describe("Sign up - Screenshot tests ", { tags: ["@visual"] }, () => {
    */
   it("Fill in the 'First name', 'Last name' and 'Email' fiels and click on [Submit] button", () => {
     //Click on [Sign up] button
-    clickSimpleOnNthElement(locators.signUp.signInButton)
+    clickSimpleOnNthElement(signUp.signInButton)
     //Fill in the 'First name' field e.g. "Carol"
-    typeTextSimple(locators.signUp.firstNameField, data.signUp.firstName)
+    typeTextSimple(signUp.firstNameField, data.signUp.firstName)
     //Fill in the 'Last name' field e.g. "Marks"
-    typeTextSimple(locators.signUp.lastNameField, data.signUp.lastName)
+    typeTextSimple(signUp.lastNameField, data.signUp.lastName)
     //Fill in the 'Email' field e.g. "carolmarks@email.com"
-    typeTextSimple(locators.signUp.emailField, data.signUp.email)
+    typeTextSimple(signUp.emailField, data.signUp.email)
     //Click on [Submit] button
-    clickSimpleOnNthElement(locators.signUp.submitButton)
+    clickSimpleOnNthElement(signUp.submitButton)
     //Take a screenshot with the displayed error
     compareSnapshot(data.screenshotTest.forthSignUpError)
   })
@@ -77,17 +82,17 @@ describe("Sign up - Screenshot tests ", { tags: ["@visual"] }, () => {
    */
   it("Fill in all the fiels with a invalid password and click on [Submit] button", () => {
     //Click on [Sign up] button
-    clickSimpleOnNthElement(locators.signUp.signInButton)
+    clickSimpleOnNthElement(signUp.signInButton)
     //Fill in the 'First name' field e.g. "Carol"
-    typeTextSimple(locators.signUp.firstNameField, data.signUp.firstName)
+    typeTextSimple(signUp.firstNameField, data.signUp.firstName)
     //Fill in the 'Last name' field e.g. "Marks"
-    typeTextSimple(locators.signUp.lastNameField, data.signUp.lastName)
+    typeTextSimple(signUp.lastNameField, data.signUp.lastName)
     //Fill in the 'Email' field e.g. "carolmarks@email.com"
-    typeTextSimple(locators.signUp.emailField, data.signUp.email)
+    typeTextSimple(signUp.emailField, data.signUp.email)
     //Fill in the 'Password' field e.g. "123456"
-    typeTextSimple(locators.signUp.passwordField, data.signUp.invalidPassword)
+    typeTextSimple(signUp.passwordField, data.signUp.invalidPassword)
     //Click on [Submit] button
-    clickSimpleOnNthElement(locators.signUp.submitButton)
+    clickSimpleOnNthElement(signUp.submitButton)
     //Take a screenshot with the displayed error
 
     compareSnapshot(data.screenshotTest.fifthSignUpError)
