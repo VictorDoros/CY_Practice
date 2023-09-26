@@ -14,3 +14,4 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           command: npx cypress run --env ENV='production',grepTags=@functional
+          browser: chrome

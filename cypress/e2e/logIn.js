@@ -14,9 +14,8 @@ import data from "../fixtures/contactList_testData.json"
 import basicData from "../support/basic_data.json"
 import logIn from "../selectors/logIn.sel"
 
-
 //Call getBaseUrl() to get environment specific url value
-const url = new Utility().getBaseUrl();
+const url = new Utility().getBaseUrl()
 
 describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
   beforeEach(() => {
@@ -26,6 +25,7 @@ describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
 
   /**
    * Basic test for 'Log in'
+   * #001
    */
   it("Check the 'Log In' URL", () => {
     clickSimpleOnNthElement(logIn.signupButton)
@@ -36,6 +36,7 @@ describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
 
   /**
    * Basic test for 'Log in'
+   * #002
    */
   it("Log in to app", () => {
     stepDescription("Type an existent email")
@@ -55,6 +56,7 @@ describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
 
   /**
    * Basic test for 'Log in'
+   * #003
    */
   it("Hit the [Submit] button without filling in the fields", () => {
     stepDescription("Check that no error is displayed")
@@ -73,6 +75,7 @@ describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
 
   /**
    * Basic test for 'Log in'
+   * #004
    */
   it("Fill in the fields with a wrong password and click on [Submit] button", () => {
     stepDescription("Check that no error is displayed")
