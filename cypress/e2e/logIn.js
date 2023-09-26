@@ -1,4 +1,4 @@
-import { Utility } from "../support/utility.js"
+import { Utility } from "../support/utility.ts"
 
 import {
   checkURL,
@@ -15,12 +15,12 @@ import basicData from "../support/basic_data.json"
 import logIn from "../selectors/logIn.sel"
 
 //Call getBaseUrl() to get environment specific url value
-//const url = new Utility().getBaseUrl()
+const url = new Utility().getBaseUrl()
 
 describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
   beforeEach(() => {
     stepDescription("Reach the page")
-    cy.visit('/')
+    cy.visit(url)
   })
 
   /**
@@ -31,7 +31,7 @@ describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
     clickSimpleOnNthElement(logIn.signupButton)
     clickSimpleOnNthElement(logIn.cancelButton)
     stepDescription("Check the 'Log in' URL")
-    checkURL(urls.baseURL + urls.loginPage)
+    checkURL(url + urls.loginPage)
   })
 
   /**
@@ -51,7 +51,7 @@ describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
     stepDescription(
       "Confirm that the URL has been changed and you were logged in"
     )
-    checkURL(urls.baseURL + urls.contactList)
+    checkURL(url + urls.contactList)
   })
 
   /**
