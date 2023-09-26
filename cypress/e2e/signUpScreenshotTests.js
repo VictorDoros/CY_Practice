@@ -4,7 +4,6 @@ import {
   compareSnapshot,
 } from "../support/reusableFunctions"
 
-import url from "../urls/urls.json"
 import data from "../fixtures/contactList_testData.json"
 import locators from "../selectors/contactList_selectors.json"
 

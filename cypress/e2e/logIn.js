@@ -9,7 +9,7 @@ import {
   stepDescription,
 } from "../support/reusableFunctions"
 
-import urls from "../urls/urls.json"
+import urls from "../fixtures/urls.json"
 import data from "../fixtures/contactList_testData.json"
 import basicData from "../support/basic_data.json"
 import logIn from "../selectors/logIn.sel"
