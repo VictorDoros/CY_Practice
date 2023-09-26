@@ -15,12 +15,12 @@ import basicData from "../support/basic_data.json"
 import logIn from "../selectors/logIn.sel"
 
 //Call getBaseUrl() to get environment specific url value
-const url = new Utility().getBaseUrl()
+//const url = new Utility().getBaseUrl()
 
 describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
   beforeEach(() => {
     stepDescription("Reach the page")
-    cy.visit(url)
+    cy.visit('/')
   })
 
   /**
@@ -31,7 +31,7 @@ describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
     clickSimpleOnNthElement(logIn.signupButton)
     clickSimpleOnNthElement(logIn.cancelButton)
     stepDescription("Check the 'Log in' URL")
-    checkURL(url + urls.loginPage)
+    checkURL(urls.baseURL + urls.loginPage)
   })
 
   /**
