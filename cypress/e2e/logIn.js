@@ -19,6 +19,7 @@ const url = new Utility().getBaseUrl()
 
 describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
   beforeEach(() => {
+    cy.wait(5000)
     stepDescription("Reach the page")
     cy.visit(url)
   })
