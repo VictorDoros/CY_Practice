@@ -64,6 +64,7 @@
 // })
 
 const { defineConfig } = require("cypress")
+const getCompareSnapshotsPlugin = require('cypress-image-diff-js/dist/plugin')
 
 module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter",
@@ -77,6 +78,7 @@ module.exports = defineConfig({
   },
   e2e: {
     setupNodeEvents(on, config) {
+      getCompareSnapshotsPlugin(on, config)
       require("cypress-mochawesome-reporter/plugin")(on)
       require("@cypress/grep/src/plugin")(config)
       return config
