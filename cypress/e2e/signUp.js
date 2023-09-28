@@ -25,7 +25,7 @@ const email = faker.internet.email()
 const invalidPassword = faker.internet.password({ length: 6 })
 const validPassword = faker.internet.password({ length: 7 })
 
-describe("Sign up page ", { tags: ["@functional", "@signUp"] }, () => {
+describe("Sign up page ", { tags: ["@webApp", "@functional", "@signUp"] }, () => {
   beforeEach(() => {
     stepDescription("Reach the page")
     cy.visit(url)

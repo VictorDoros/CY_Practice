@@ -15,7 +15,7 @@ import basicData from "../support/basic_data.json"
 //Call getBaseUrl() to get environment specific url value
 const url = new Utility().getBaseUrl()
 
-describe("Sign up - Screenshot tests ", { tags: ["@visual"] }, () => {
+describe("Sign up - Screenshot tests ", { tags: ["@webApp", "@visual"] }, () => {
   beforeEach(() => {
     stepDescription("Reach the page")
     cy.visit(url)

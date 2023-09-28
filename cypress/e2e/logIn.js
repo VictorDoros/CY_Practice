@@ -17,7 +17,7 @@ import logIn from "../selectors/logIn.sel"
 //Call getBaseUrl() to get environment specific url value
 const url = new Utility().getBaseUrl()
 
-describe("Log in page ", { tags: ["@functional", "@login"] }, () => {
+describe("Log in page ", { tags: ["@webApp", "@functional", "@login"] }, () => {
   beforeEach(() => {
     stepDescription("Reach the page")
     cy.visit(url)
