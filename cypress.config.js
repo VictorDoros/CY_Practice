@@ -1,10 +1,11 @@
 // import { defineConfig } from "cypress"
-// import getCompareSnapshotsPlugin from "cypress-image-diff-js/dist/plugin.js"
-// import cypressGrepPlugin from "@cypress/grep/src/plugin.js"
+
 // import {
 //   beforeRunHook,
 //   afterRunHook,
 // } from "cypress-mochawesome-reporter/lib/index.js"
+// import getCompareSnapshotsPlugin from "cypress-image-diff-js/dist/plugin.js"
+// import cypressGrepPlugin from "@cypress/grep/src/plugin.js"
 
 // export default defineConfig({
 //   reporter: 'cypress-mochawesome-reporter',
@@ -64,8 +65,6 @@
 
 const { defineConfig } = require("cypress")
 
-const compareSnapshot = require('cypress-image-diff-js/dist/plugin')
-
 module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter",
   retries: {
@@ -79,7 +78,6 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       require("cypress-mochawesome-reporter/plugin")(on)
-      compareSnapshot(on, config)
       require("@cypress/grep/src/plugin")(config)
       return config
     },
