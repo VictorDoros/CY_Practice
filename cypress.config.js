@@ -1,5 +1,24 @@
 const { defineConfig } = require("cypress")
-const getCompareSnapshotsPlugin = require('cypress-image-diff-js/dist/plugin')
+const getCompareSnapshotsPlugin = require("cypress-image-diff-js/dist/plugin")
+const mysql = require("mysql2")
+
+//For connecting to SQL Server
+function queryTestDb(query, config) {
+  // creates a new mysql connection using credentials from cypress.json env's
+  const connection = mysql.createConnection(config.env.db)
+  // start connection to db
+  connection.connect()
+  // exec query + disconnect to db as a Promise
+  return new Promise((resolve, reject) => {
+    connection.query(query, (error, results) => {
+      if (error) reject(error)
+      else {
+        connection.end()
+        return resolve(results)
+      }
+    })
+  })
+}
 
 module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter",
@@ -10,14 +29,28 @@ module.exports = defineConfig({
   env: {
     grepFilterSpecs: true,
     grepOmitFiltered: true,
+
+    db: {
+      host: "db4free.net",
+      user: "admin110011",
+      password: "admin123456",
+      database: "cypress_db",
+      port: 3306
+    }
   },
   e2e: {
     setupNodeEvents(on, config) {
+      on("task", {
+        queryDb: (query) => {
+          return queryTestDb(query, config)
+        },
+      })
       getCompareSnapshotsPlugin(on, config)
       require("cypress-mochawesome-reporter/plugin")(on)
       require("@cypress/grep/src/plugin")(config)
       return config
     },
+
     // changed path to test folders
     fixturesFolder: "cypress/productTests/fixtures",
     specPattern: "cypress/e2e",
