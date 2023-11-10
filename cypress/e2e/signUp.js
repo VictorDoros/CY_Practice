@@ -1,4 +1,5 @@
 import { Utility } from "../support/utility.ts"
+import { faker } from "@faker-js/faker"
 
 import {
   checkURL,
@@ -13,7 +14,7 @@ import urls from "../fixtures/urls.json"
 import data from "../fixtures/contactList_testData.json"
 import signUp from "../selectors/signUp.sel"
 import basicData from "../support/basic_data.json"
-import { faker } from "@faker-js/faker"
+
 
 //Call getBaseUrl() to get environment specific url value
 const url = new Utility().getBaseUrl()
