@@ -1,3 +1,5 @@
+
+
 //utility.ts
 export class Utility {
     getBaseUrl() {
@@ -8,5 +10,15 @@ export class Utility {
             return "https://thinking-tester-contact-list-staging.herokuapp.com"
         else if (envi == 'qa')
             return "https://thinking-tester-contact-list-qa.herokuapp.com"
+    }
+
+    randomStatus() {
+        const statuses = ["active", "inactive"]
+        return statuses[Math.floor(Math.random() * 2)]
+    }
+
+    randomGender(){
+        const gender = ["male", "female"]
+        return gender[Math.floor(Math.random() * 2)]
     }
 }

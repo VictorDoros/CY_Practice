@@ -18,6 +18,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import 'cypress-plugin-api'
 import 'cypress-mochawesome-reporter/register'
 import 'cypress-real-events/support'
 import registerCypressGrep from '@cypress/grep/src/support'
